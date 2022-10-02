@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor</title>
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+</head>
+<body>
+<textarea name="editor1"></textarea>
+<script>
+    let locationBase= location.href.toString().split('/').slice(0,-1).join('/');
+    CKEDITOR.plugins.basePath = locationBase+'/plugins/';
+    CKEDITOR.replace( 'editor1', {
+        customConfig: locationBase + '/custom_config.js'
+    });
+</script>
+</body>
+</html>
